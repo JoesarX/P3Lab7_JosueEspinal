@@ -47,3 +47,6 @@ int Articulos::getCantidad(){
 double Articulos::getPrecio(){
 	return precio;
 }
+vector<char> Articulos::getTallas(){
+    return tallas;
+}

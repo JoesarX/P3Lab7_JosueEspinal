@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "Categoria.h"
 #include <bits/stdc++.h>
+#include <vector>
 using std::string;
 using std::cout;
 using namespace std;
@@ -15,8 +16,7 @@ class Articulos
 		~Articulos();
 		void setNombre(string);
         string getNombre();
-        void setTallas(string);
-        string getTallas();
+
         void setPrecio(int);
         double getPrecio();
         void setCantidad(int);
@@ -27,6 +27,7 @@ class Articulos
         void setDescuento(double);
         string toString();
         string printVector();
+        vector<char> getTallas();
 	private:
 		string nombre;
 		vector<char> tallas;

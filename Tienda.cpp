@@ -83,6 +83,14 @@ void Tienda::listarArticulos() {
 
 }
 void Tienda::buscarArticulos(int categ, int size) {
+	char talla;
+	if(size == 0){
+		talla = 'S';
+	}else if(size == 1){
+		talla = 'M';
+	}else if(size == 2){
+		talla = 'L';
+	}
 	if(categ == -1) {
 		if(size == -1) {
 			for(int i = 0; i < articulos.size(); i++) {
@@ -100,6 +108,8 @@ void Tienda::buscarArticulos(int categ, int size) {
 					cout<< " - " << (articulos.at(i)->toString())<< "\n";
 				}
 			}
+		}else{
+			
 		}
 	}
 	cout<<"\n";
