@@ -1,0 +1,37 @@
+# Project: p3Lab7_JosueEspinal
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Articulos.o Tienda.o Categoria.o
+LINKOBJ  = main.o Articulos.o Tienda.o Categoria.o
+LIBS     = -L"D:/random apps/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"D:/random apps/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/random apps/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"D:/random apps/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/random apps/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"D:/random apps/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"D:/random apps/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/random apps/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"D:/random apps/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = p3Lab7_JosueEspinal.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = D:\random apps\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Articulos.o: Articulos.cpp
+	$(CPP) -c Articulos.cpp -o Articulos.o $(CXXFLAGS)
+
+Tienda.o: Tienda.cpp
+	$(CPP) -c Tienda.cpp -o Tienda.o $(CXXFLAGS)
+
+Categoria.o: Categoria.cpp
+	$(CPP) -c Categoria.cpp -o Categoria.o $(CXXFLAGS)
